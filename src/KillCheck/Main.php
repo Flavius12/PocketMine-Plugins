@@ -42,8 +42,9 @@ use pocketmine\event\entity\EntityDamageEvent;
 					$killer = $cause->getDamager();
 					if($killer instanceof Player){
 						$killer->sendMessage($this->getConfig()->get("Killer-Message"));
-						  $this->player->addMoney($killer, $this->getConfig()->get("Added-Coins"));
+						  $this->player->addMoney($killer, $this->getConfig()->get("Killer-Coins"));
 						    $player->sendMessage($this->getConfig()->get("Player-Message"));
+						     $this->player->reduceMoney($player, $this->getConfig()->get("Reduced-Coins"));
 				 
       }
        
