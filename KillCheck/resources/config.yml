@@ -1,0 +1,13 @@
+##############################
+#Message when killer kills the target
+Killer-Message: "You have earned coins!"
+
+#How much coins should the killer get?
+Killer-Coins: 5
+##############################
+#Message when target dies
+Player-Message: "You died!"
+
+#How much coins should the target lose?
+Reduced-Coins: 2
+##############################
