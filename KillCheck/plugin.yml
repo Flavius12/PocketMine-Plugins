@@ -1,0 +1,8 @@
+name: KillCheck
+version: 0.1
+main: KillCheck\Main
+api: 1.10.0
+load: STARTUP
+author: Artide
+description: "Players get paid for kills"
+depend: EconomyAPI
