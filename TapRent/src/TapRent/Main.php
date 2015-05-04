@@ -1,6 +1,6 @@
 <?php
 
-namespace TapRent;
+namespace HouseRental;
 
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -44,6 +44,7 @@ public function onInteract(PlayerInteractEvent $event){
 	$this->home->set("x", $x);
 	$this->home->set("y", $y);
 	$this->home->set("z", $z);
+	$this->home->save();
 	if($this->cost->p->getAllMoney() === $this->getConfig()->get("Minimun-cost")){
 	$this->getServer()->broadcast($p->getName." rented ".$text[0]);
 	$this->cost->reduceMoney($p, 
@@ -62,7 +63,6 @@ public function onCommand(CommandSender $sender, Command $command, $label, array
 	switch($cmd){
 	case "home":
 	if($sender->hasPermission("taprent.command.home")){
-	
 	if(isset($this->home->get("x") && $this->home->get("y") && $this->home->get("y"))){
 	$p->teleport(new Vector3($this->home->get("x"), $this->home->get("y"), $this->home->get("z")));
 		
@@ -79,9 +79,15 @@ public function onBreak(BlockBreakEvent $event){
 	$tile = $event->getBlock()->getLevel()->getTile();
 	if($tile instanceof Sign){
 	$text = $tile->getText();
+	
+	$this->home->set("x", 0);
+	$this->home->set("y", 0);
+	$this->home->set("z", 0);
+	$this->home->save();
 	$tile->setText($this->getConfig()->get("Disoccupied-text-1"), $this->getConfig()->get("Disoccupied-text-2"), $this->getConfig()->get("Disoccupied-text-3"), $this->getConfig()->get("Disoccupied-text-4"));
 
 	$this->getServer()->broadcast($p->getName()." disoccupied a home.");
+	$p->sendMessage("You must pay rent to stay here again.");
 	
 	}
  }
