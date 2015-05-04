@@ -1,0 +1,26 @@
+#######################################
+#these text will be show when player home is occupied
+#it will be show on a sign
+
+Occupied-text-1: [Home]
+Occupied-text-2: @player
+Occupied-text-3: Private
+Occupied-text-4: property
+#######################################
+#How much minimum should the rent cost?
+Minimum-cost: 100
+
+#Monthly rent?
+House-rent-cost: 100
+
+#if player doesn't have enough money, send what message?
+Not-enough-money: "You don't have enough money to pay rent!"
+#######################################
+
+#When the house gets disoccupied
+
+Disoccoupied-text-1: [Home]
+Disoccupied-text-2: For rent
+Disoccupied-text-3: 100
+Disoccupied-text-4: dollars
+#######################################
