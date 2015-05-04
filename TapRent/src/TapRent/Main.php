@@ -32,7 +32,7 @@ public function onInteract(PlayerInteractEvent $event){
 	if($blockID == 63 || $blockID == 68 || $blockID == 323){
 		
 	$tile = $event->getBlock()->getLevel()->getTile();
-	if($tile instanceOf Sign){
+	if($tile instanceof Sign){
 	$text = $tile->getText();
 	$tile->setText($this->getConfig()->get("Occupied-text-1"), $this->getConfig()->get("Occupied-text-2"), $this->getConfig()->get("Occupied-text-3"), $this->getConfig()->get("Occupied-text-4"));
 	$pn = str_replace("@player", $p->getName(), $pn);
@@ -77,7 +77,7 @@ public function onBreak(BlockBreakEvent $event){
 	$p = $event->getPlayer();
 	
 	$tile = $event->getBlock()->getLevel()->getTile();
-	if($tile instanceOf Sign){
+	if($tile instanceof Sign){
 	$text = $tile->getText();
 	$tile->setText($this->getConfig()->get("Disoccupied-text-1"), $this->getConfig()->get("Disoccupied-text-2"), $this->getConfig()->get("Disoccupied-text-3"), $this->getConfig()->get("Disoccupied-text-4"));
 
