@@ -1,0 +1,4 @@
+############################
+#How should players tags be displayed?
+Name-tag-format: 'test-@player'
+############################
