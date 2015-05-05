@@ -1,0 +1,6 @@
+name: CustomTag
+version: 1.1
+author: Artide
+main: CustomTag\Main
+description: "Set a custom name tag for all players!"
+api: 1.10.0
