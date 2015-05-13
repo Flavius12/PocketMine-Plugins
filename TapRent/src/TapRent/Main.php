@@ -1,18 +1,22 @@
 <?php
 
-namespace HouseRental;
+namespace TapRent;
 
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\math\Vector3 as Vector3;
 use pocketmine\level\Level;
+use pocketmine\command\Command;
+use pocketmine\command\CommandExecutor;
+use pocketmine\command\CommandSender;
+use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\BlockBreakEvent;
 use pocketmine\utils\Config;
 use pocketmine\command\Command;
 use pocketmine\command\ComnandSender;
 
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener, CommandExecutor {
 
 public function onEnable(){
 
