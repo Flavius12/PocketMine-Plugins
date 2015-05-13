@@ -26,6 +26,7 @@ public function onEnable(){
 	$this->crt = "artide";
 	$this->getLogger()->info("Plugin loaded successfully!");
 	$this->getLogger()->info("version ".$this->v." by ".$this->crt);
+	$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	$this->cost = EconomyAPI::getInstance();
 
  }
